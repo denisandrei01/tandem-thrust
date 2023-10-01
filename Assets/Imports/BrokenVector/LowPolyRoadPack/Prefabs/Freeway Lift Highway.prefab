@@ -1,0 +1,645 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &168972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 459074}
+  - component: {fileID: 3346276}
+  - component: {fileID: 2335470}
+  - component: {fileID: 6412424}
+  m_Layer: 0
+  m_Name: Freeway Lift Highway
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &459074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168972}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2567916796815433414}
+  - {fileID: 1353271931510076894}
+  - {fileID: 3178090107070691829}
+  - {fileID: 6429696896513972413}
+  - {fileID: 6753285322063447208}
+  - {fileID: 1333509449410092185}
+  - {fileID: 4595342217430656817}
+  - {fileID: 1761972711231607128}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3346276
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168972}
+  m_Mesh: {fileID: 4300000, guid: 2357264b94c408a409585f9979a3990c, type: 3}
+--- !u!23 &2335470
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168972}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9cbdac3088fceec40bde6d0619e2ebda, type: 2}
+  - {fileID: 2100000, guid: b73916d937ddb5b428608e0d5072412b, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6412424
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168972}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 2357264b94c408a409585f9979a3990c, type: 3}
+--- !u!1001 &4258940152686592549
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 459074}
+    m_Modifications:
+    - target: {fileID: 3017300685834225274, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19.787
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.526
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.481
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7194075
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.6907048
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.012923653
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.07220017
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 84.662
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -60.708
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -67.618
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005650323193084254, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_Name
+      value: Point Light Hill (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+--- !u!4 &6753285322063447208 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+  m_PrefabInstance: {fileID: 4258940152686592549}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4582529150608105008
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 459074}
+    m_Modifications:
+    - target: {fileID: 3017300685834225274, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.802
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.645
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.531
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7194075
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.6907048
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.012923653
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.07220017
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 84.662
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -60.708
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -67.618
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005650323193084254, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_Name
+      value: Point Light Hill (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+--- !u!4 &6429696896513972413 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+  m_PrefabInstance: {fileID: 4582529150608105008}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4972435792057768011
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 459074}
+    m_Modifications:
+    - target: {fileID: 3017300685834225274, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.283
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.236
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.542
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7194075
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.6907048
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.012923653
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.07220017
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 84.662
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -60.708
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -67.618
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005650323193084254, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_Name
+      value: Point Light Hill
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+--- !u!4 &2567916796815433414 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+  m_PrefabInstance: {fileID: 4972435792057768011}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5384175006800052088
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 459074}
+    m_Modifications:
+    - target: {fileID: 3017300685834225274, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.774
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.633
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.753
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7194075
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.6907048
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.012923653
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.07220017
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 84.662
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -60.708
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -67.618
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005650323193084254, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_Name
+      value: Point Light Hill (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+--- !u!4 &3178090107070691829 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+  m_PrefabInstance: {fileID: 5384175006800052088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6442216606619967932
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 459074}
+    m_Modifications:
+    - target: {fileID: 3017300685834225274, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7194075
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.6907048
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.012923653
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.07220017
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 84.662
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -60.708
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -67.618
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005650323193084254, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_Name
+      value: Point Light Hill (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+--- !u!4 &4595342217430656817 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+  m_PrefabInstance: {fileID: 6442216606619967932}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8368573756558072340
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 459074}
+    m_Modifications:
+    - target: {fileID: 3017300685834225274, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19.794
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.552
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.844
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7194075
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.6907048
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.012923653
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.07220017
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 84.662
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -60.708
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -67.618
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005650323193084254, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_Name
+      value: Point Light Hill (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+--- !u!4 &1333509449410092185 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+  m_PrefabInstance: {fileID: 8368573756558072340}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8387249654362927955
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 459074}
+    m_Modifications:
+    - target: {fileID: 3017300685834225274, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.316
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.359
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.916
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7194075
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.6907048
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.012923653
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.07220017
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 84.662
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -60.708
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -67.618
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005650323193084254, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_Name
+      value: Point Light Hill (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+--- !u!4 &1353271931510076894 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+  m_PrefabInstance: {fileID: 8387249654362927955}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9138224074728642517
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 459074}
+    m_Modifications:
+    - target: {fileID: 3017300685834225274, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28.291
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.714
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.554
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7194075
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.6907048
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.012923653
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.07220017
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 84.662
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -60.708
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -67.618
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005650323193084254, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+      propertyPath: m_Name
+      value: Point Light Hill (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+--- !u!4 &1761972711231607128 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7395674445273876109, guid: 228b4b037b6df104a89552eceac8c3bb, type: 3}
+  m_PrefabInstance: {fileID: 9138224074728642517}
+  m_PrefabAsset: {fileID: 0}

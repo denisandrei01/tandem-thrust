@@ -13,8 +13,14 @@ public class StarSpawner : MonoBehaviour
 
     public void SpawnStars()
     {
+        bool first = true;
         foreach (Transform waypoint in waypoints)
         {
+            if(first){
+                first = false;
+                continue;
+            }
+
             float yPosition = waypoint.position.y; // Get the Y-axis position of the waypoint
 
             for (int i = 0; i < numberOfStars; i++)

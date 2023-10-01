@@ -23,6 +23,7 @@ public class PowerupManager : MonoBehaviour
 
     public void TryToActivatePowerUp(int powerUpID)
     {
+        Debug.Log("Try to activate power up id: " + powerUpID);
         GameManagers.playerController.TryToActivatePowerUpServerRpc(GameManagers.playerController.OwnerClientId, powerUpID);
     }
 

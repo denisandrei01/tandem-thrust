@@ -1,0 +1,4 @@
+de sus in jos
+1   wire1 castigator (albastru)  castigator casuta de sus
+2   wire2 castigator (verde)     castigator casuta de mijloc
+3   wire3 castigator (roz)       castigator casuta de jos

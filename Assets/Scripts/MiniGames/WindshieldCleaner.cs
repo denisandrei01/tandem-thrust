@@ -20,6 +20,10 @@ public class WindshieldCleaner : IMinigame
             }
         }
 
+        if(GameManagers.playerController.playerRole == Player.Role.Copilot){
+            GameManagers.gameplayManager.powerupManager.powerupPanel.SetActive(false);
+        }
+
         currentPattern = patern;
         needsToClean = paterns[patern].GetComponent<InkPattern>().inks.Count;
         cleaned = 0;

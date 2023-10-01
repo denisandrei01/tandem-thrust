@@ -19,8 +19,8 @@ public class ServerManager : MonoBehaviour
 
         public int currentCheckpoint;
         public int currentLap;
-
         public bool wrongDirection;
+        public float activeBoostTimer;
 
         public TeamData(){
             hasPilot = hasCopilot = wrongDirection = false;
@@ -29,6 +29,8 @@ public class ServerManager : MonoBehaviour
             currentLap = 1;
         }
     }
+
+    private List<TeamData> teamsWithActiveSpeedBoost = new();
 
     // map teamId to TeamData
     private List<TeamData> teams = new();
@@ -149,6 +151,17 @@ public class ServerManager : MonoBehaviour
         return null;
     }
 
+
+    private TeamData GetTeamByPilot(ulong pilotId)
+    {
+        foreach(var team in teams){
+            if(team.pilotId == pilotId){
+                return team;
+            }
+        }
+
+        return null;
+    }
     public void StarColected(ulong carId)
     {
         TeamData team = GetTeamByCar(carId);
@@ -255,10 +268,28 @@ public class ServerManager : MonoBehaviour
         if(powerUpCost <= team.stars){
             team.stars -= powerUpCost;
             GameManagers.playerController.UpdateStarsClientRpc(team.stars, ClientRpcParamsForTeam(team));
-            int powerUpPatern = Random.Range(0, 3);
-            // Activate powerUp for all the other players
-            GameManagers.playerController.ActivatePowerClientRpc(powerUpID, powerUpPatern, ClientRpcParamsAllTeamsExceptOne(team));
+            if(powerUpID != 0){
+                int powerUpPatern = Random.Range(0, 3);
+                // Activate powerUp for all the other players
+                GameManagers.playerController.ActivatePowerClientRpc(powerUpID, powerUpPatern, ClientRpcParamsAllTeamsExceptOne(team));
+            }
+            else{
+                // Speed Boost powerUp is handled on the server
+                var car = GetCar(team.pilotId);
+                car.GetComponent<Rigidbody>().mass = 1000;
+                teamsWithActiveSpeedBoost.Add(team);
+                team.activeBoostTimer = 15f;
+                GameManagers.playerController.ActivatePowerClientRpc(powerUpID, 0, ClientRpcParamsForTeam(team));
+            }
         }
+    }
+
+    private void DeactivateBoost(TeamData team)
+    {
+        var car = GetCar(team.pilotId);
+        car.GetComponent<Rigidbody>().mass = 1500;
+        teamsWithActiveSpeedBoost.Remove(team);
+        GameManagers.playerController.SpeedBoostFinishedClientRpc(ClientRpcParamsForTeam(team));
     }
 
     public void CleanInk(ulong copilotId, int inkId)
@@ -267,10 +298,47 @@ public class ServerManager : MonoBehaviour
         GameManagers.playerController.CleanInkClientRpc(inkId, ClientRpcParamsForTeam(team));
     }
 
+
+     public void TryToResetCheckpoint(ulong playerId)
+    {
+        TeamData team = GetTeamByPilot(playerId);
+    
+        Vector3 checkpointPos = GameManagers.gameplayManager.checkpointsList[team.currentCheckpoint].transform.position;
+        Transform carTransform = GetCar(playerId).transform;           
+        carTransform.position = new Vector3(checkpointPos.x, checkpointPos.y, checkpointPos.z);
+        carTransform.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        Transform fromtrack = GameManagers.gameplayManager.checkpointsList[team.currentCheckpoint].transform;
+        Quaternion checkpointRotation = Quaternion.LookRotation(fromtrack.forward, Vector3.up);
+        checkpointRotation *= Quaternion.Euler(0f, checkpointPos.y + 90f, 0f);
+        carTransform.rotation = checkpointRotation;
+        GameManagers.playerController.CorrectDirectionClientRpc(ClientRpcParamsForTeam(team));
+        team.wrongDirection = false;
+    }
+    public void PlayerCutWire(ulong copilodId, bool correct)
+    {
+        TeamData team = GetTeamByCopilot(copilodId);
+        if(!correct){
+            GameObject car = GetCar(team.pilotId);
+            car.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
+        GameManagers.playerController.RemoveBombWarningClientRpc(ClientRpcParamsForTeam(team));
+    }
+
     private void Update()
     {
         if(trackTime){
             gameTime += Time.deltaTime;
+        }
+
+        // We need to iterate in reverse because we remove items from the list while iterate
+        for(int i=teamsWithActiveSpeedBoost.Count - 1; i>=0; i--){
+            TeamData team = teamsWithActiveSpeedBoost[i];
+            if(team.activeBoostTimer > 0){
+                team.activeBoostTimer -= Time.deltaTime;
+            }
+            else{
+                DeactivateBoost(team);
+            }
         }
     }
 }

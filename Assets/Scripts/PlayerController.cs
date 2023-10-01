@@ -184,7 +184,8 @@ public class PlayerController : NetworkBehaviour
     [ClientRpc]
     private void StartGameClientRpc()
     {
-        GameManagers.gameplayManager.StartGame();
+        GameManagers.gameplayManager.loadingScreen.SetActive(false);
+        GameManagers.gameplayManager.countDown.StartCountDown();
     }
 
     [ClientRpc]
@@ -273,9 +274,6 @@ public class PlayerController : NetworkBehaviour
     public void ActivatePowerClientRpc(int powerUpID, int powerUpPatern, ClientRpcParams clientRpcParams)
     {
         GameManagers.gameplayManager.powerupManager.Activate(powerUpID, powerUpPatern);
-        if(GameManagers.playerController.playerRole == Player.Role.Copilot){
-            GameManagers.gameplayManager.powerupManager.powerupPanel.SetActive(false);
-        }
     }
 
     [ServerRpc]
@@ -288,7 +286,33 @@ public class PlayerController : NetworkBehaviour
     public void CleanInkClientRpc(int inkId, ClientRpcParams clientRpcParams)
     {
         // ToDo: rewrite linia asta 
-        GameManagers.gameplayManager.powerupManager.minigames[0].manager.gameObject.GetComponent<WindshieldCleaner>().CleanInk(inkId);
+        GameManagers.gameplayManager.powerupManager.minigames[1].manager.gameObject.GetComponent<WindshieldCleaner>().CleanInk(inkId);
+    }
+
+    [ClientRpc]
+    public void SpeedBoostFinishedClientRpc(ClientRpcParams clientRpcParams)
+    {
+        // ToDo: rewrite linia asta 
+        GameManagers.gameplayManager.powerupManager.minigames[0].manager.gameObject.GetComponent<SpeedBoost>().Finished();
+    }
+
+    [ServerRpc]
+    public void PlayerCutWireServerRpc(ulong copilodId, bool correct)
+    {
+        GameManagers.serverManager.PlayerCutWire(copilodId, correct);
+    }
+
+    [ClientRpc]
+    public void RemoveBombWarningClientRpc(ClientRpcParams clientRpcParams)
+    {
+        // ToDo: rewrite linia asta 
+        GameManagers.gameplayManager.powerupManager.minigames[2].manager.gameObject.GetComponent<Bomb>().Finished();
+    }
+
+    [ServerRpc]
+    public void TryToResetCheckpointServerRpc(ulong playerId)
+    {
+        GameManagers.serverManager.TryToResetCheckpoint(playerId);
     }
 
 #endregion //Gameplay

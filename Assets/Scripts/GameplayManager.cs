@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class GameplayManager : MonoBehaviour
 {
-    [SerializeField] private GameObject loadingScreen, playerScreen, spectatorScreen;
+    [SerializeField] public GameObject loadingScreen, playerScreen, spectatorScreen;
     [SerializeField] private GameObject carPrefab;
     [SerializeField] private CameraFollow cameraManager;
     [SerializeField] private Speedometer speedometer;
@@ -19,6 +19,7 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] private Minimap minimapManager;
     [SerializeField] public LeaderboardManager leaderboardManager;
     [SerializeField] public PowerupManager powerupManager;
+    [SerializeField] public CountDown countDown;
 
     private Action GetInputFunction;
 
@@ -35,7 +36,6 @@ public class GameplayManager : MonoBehaviour
     public void Init(Player player, bool isServer)
     {
         loadingScreen.SetActive(true);
-        Time.timeScale = 0f;
 
         if(!isServer){
             // Only the server should know the checkpoints
@@ -82,7 +82,6 @@ public class GameplayManager : MonoBehaviour
     public void StartGame()
     {
         loadingScreen.SetActive(false);
-        Time.timeScale = 1f;
         gameRuning = true;
     }
 
@@ -90,6 +89,7 @@ public class GameplayManager : MonoBehaviour
     {
         leaderboardManager.leaderboard.SetActive(true);
         playerScreen.SetActive(false);
+        powerupManager.powerupPanel.SetActive(false);
         minimapManager.gameObject.SetActive(false);
         gameRuning = false;
     }
@@ -98,6 +98,7 @@ public class GameplayManager : MonoBehaviour
     {
         var car = Instantiate(carPrefab, startingPosition[teamId].car, Quaternion.Euler(0, -90f, 0f));
         car.GetComponent<NetworkObject>().Spawn();
+        car.GetComponent<CarManager>().SpawnWheels(car.GetComponent<Controller>());
         return car;
     }
 
@@ -149,6 +150,10 @@ public class GameplayManager : MonoBehaviour
         GameManagers.playerController.PilotInputServerRpc(GameManagers.playerController.OwnerClientId,
             horizontalInput, verticalInput, isBraking
         );
+        if(Input.GetKeyDown(KeyCode.H))
+        {
+            GameManagers.playerController.TryToResetCheckpointServerRpc(GameManagers.playerController.OwnerClientId);
+        }
     }
 #endregion //PilotInput
 

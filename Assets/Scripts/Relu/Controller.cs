@@ -75,10 +75,7 @@ public class Controller : MonoBehaviour
     [SerializeField] private WheelCollider rearLeftWheelCollider;
     [SerializeField] private WheelCollider rearRightWheelCollider;
 
-    [SerializeField] private Transform frontLeftWheelTransform;
-    [SerializeField] private Transform frontRightWheelTransform;
-    [SerializeField] private Transform rearLeftWheelTransform;
-    [SerializeField] private Transform rearRightWheelTransform;
+    public Transform frontLeftWheelTransform, frontRightWheelTransform;
 
     private Transform fromTrack;
 
@@ -300,13 +297,14 @@ public class Controller : MonoBehaviour
         frontRightWheelCollider.steerAngle = currentSteerAngle;
     }
 
+
     private void UpdateWheels()
     {
         // Dam update vizual la roti, sa vedem cum se misca pentru fiecare roata in parte
         UpdateSingleWheel(frontLeftWheelCollider, frontLeftWheelTransform);
         UpdateSingleWheel(frontRightWheelCollider, frontRightWheelTransform);
-        UpdateSingleWheel(rearLeftWheelCollider, rearLeftWheelTransform);
-        UpdateSingleWheel(rearRightWheelCollider, rearRightWheelTransform);
+        // UpdateSingleWheel(rearLeftWheelCollider, rearLeftWheelTransform);
+        // UpdateSingleWheel(rearRightWheelCollider, rearRightWheelTransform);
     }
 
     private void UpdateSingleWheel(WheelCollider wheelCollider, Transform wheelTransform)

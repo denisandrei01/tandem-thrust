@@ -34,12 +34,13 @@ public class WindshieldCleaner : IMinigame
 
     public void TryToCleanInk(int inkIndex)
     {
-        Debug.Log("is Active: " + isActive);
         if(!isActive){
             return;
         }
         Debug.Log("Try to clean: " + inkIndex);
-        GameManagers.playerController.CleanInkServerRpc(GameManagers.playerController.OwnerClientId, inkIndex);
+        if(paterns[currentPattern].GetComponent<InkPattern>().inks[inkIndex].activeSelf){ // Only if it wasn't already cleaned
+            GameManagers.playerController.CleanInkServerRpc(GameManagers.playerController.OwnerClientId, inkIndex);
+        }
     }
 
     public void CleanInk(int inkIndex)

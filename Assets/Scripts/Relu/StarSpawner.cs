@@ -21,7 +21,7 @@ public class StarSpawner : MonoBehaviour
                 continue;
             }
 
-            float yPosition = waypoint.position.y; // Get the Y-axis position of the waypoint
+            float yPosition = waypoint.position.y - 0.2f; // Get the Y-axis position of the waypoint
 
             for (int i = 0; i < numberOfStars; i++)
             {

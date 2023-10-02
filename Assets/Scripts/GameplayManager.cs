@@ -87,6 +87,12 @@ public class GameplayManager : MonoBehaviour
         }
     }
 
+    public void SkipCalibration()
+    {
+        GameManagers.playerController.PlayerReadyAfterCalibrationServerRpc();
+        bCIManager.gameObject.SetActive(false);
+    }
+
     public void FinishCalibration()
     {
         loadingScreen.SetActive(true);
@@ -127,8 +133,7 @@ public class GameplayManager : MonoBehaviour
     {
         car.GetComponent<CarManager>().Init(GameManagers.GetTeam(teamId));
         if(deleteController){
-            Destroy(car.GetComponent<Controller>());
-            Destroy(car.GetComponentInChildren<WheelsScript>());
+            car.GetComponent<CarManager>().FakeCar();
         }
     }
 

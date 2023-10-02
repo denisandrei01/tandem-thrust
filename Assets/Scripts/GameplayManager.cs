@@ -84,6 +84,7 @@ public class GameplayManager : MonoBehaviour
             bCIManager.gameObject.SetActive(true);
         }
         else{
+            calibrationScreen.SetActive(false);
             GameManagers.playerController.PlayerReadyAfterCalibrationServerRpc();
         }
     }

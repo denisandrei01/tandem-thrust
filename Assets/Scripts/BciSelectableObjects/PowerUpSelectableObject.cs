@@ -24,23 +24,14 @@ public class PowerUpSelectableObject : MonoBehaviour
         //TODO ADD YOUR CODE HERE
         if(_update)
         {
-            switch (_selectedClass)
-            {
-                case 0:
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    break;
-
+            if(_selectedClass >= 1 && _selectedClass <= 3){
+                GameManagers.gameplayManager.powerupManager.TryToActivatePowerUp((int)(_selectedClass - 1));
+            }
+            else if(_selectedClass >= 4 && _selectedClass <= 10){
+                GameManagers.gameplayManager.powerupManager.minigames[1].manager.GetComponent<WindshieldCleaner>().TryToCleanInk((int)(_selectedClass - 4));
+            }
+            else if(_selectedClass >= 11 && _selectedClass <= 13){
+                GameManagers.gameplayManager.powerupManager.minigames[2].manager.GetComponent<Bomb>().TryToCutWire((int)(_selectedClass - 11));
             }
             _update = false;
         } 

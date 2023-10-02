@@ -7,6 +7,8 @@ public class Bomb : IMinigame
     [SerializeField] private GameObject warning;
     [SerializeField] private List<GameObject> paterns;
 
+    private bool isActive = false;
+
     private int currentPattern;
 
     public override void Activate(int patern)
@@ -20,10 +22,15 @@ public class Bomb : IMinigame
         }
 
         currentPattern = patern;
+        isActive = true;
     }
 
     public void TryToCutWire(int wire)
     {
+        if(!isActive){
+            return;
+        }
+
         GameManagers.playerController.PlayerCutWireServerRpc(GameManagers.playerController.OwnerClientId,
             paterns[currentPattern].GetComponent<BombPattern>().correctWire == wire
         );
@@ -31,6 +38,7 @@ public class Bomb : IMinigame
 
     public void Finished()
     {
+        isActive = false;
         warning.SetActive(false);
         if(GameManagers.isCopilot){
             GameManagers.gameplayManager.powerupManager.powerupPanel.SetActive(true);

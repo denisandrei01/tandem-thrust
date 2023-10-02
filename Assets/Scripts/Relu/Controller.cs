@@ -77,8 +77,6 @@ public class Controller : MonoBehaviour
 
     public Transform frontLeftWheelTransform, frontRightWheelTransform;
 
-    private Transform fromTrack;
-
     public float GetBrake()
     {
         return brakeForce;
@@ -310,14 +308,11 @@ public class Controller : MonoBehaviour
     private void UpdateSingleWheel(WheelCollider wheelCollider, Transform wheelTransform)
     {
         // Facem rost de pozitia si rotatia rotii
-        Vector3 pos;
-        Quaternion rot;
 
         // Vedem unde ar trebui sa fie si stocam valorile in pos si rot
-        wheelCollider.GetWorldPose(out pos, out rot);
+        wheelCollider.GetWorldPose(out Vector3 pos, out Quaternion rot);
 
         // Facem update-ul sa se si vada ca se coteste =)
-        wheelTransform.rotation = rot;
-        wheelTransform.position = pos;
+        wheelTransform.SetPositionAndRotation(pos, rot);
     }
 }

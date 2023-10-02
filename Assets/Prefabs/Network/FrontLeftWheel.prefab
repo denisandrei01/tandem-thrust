@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7252254486240615678}
   - component: {fileID: 5886103698274152116}
   - component: {fileID: 4284375829959711963}
-  - component: {fileID: 2972223343605528072}
-  - component: {fileID: 1392993840551484531}
+  - component: {fileID: 1217371439941990612}
+  - component: {fileID: 3797178933004911403}
   m_Layer: 0
   m_Name: FrontLeftWheel
   m_TagString: Untagged
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2972223343605528072
+--- !u!114 &1217371439941990612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,7 +105,7 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &1392993840551484531
+--- !u!114 &3797178933004911403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

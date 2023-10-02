@@ -133,7 +133,7 @@ public class GameplayManager : MonoBehaviour
     {
         car.GetComponent<CarManager>().Init(GameManagers.GetTeam(teamId));
         if(deleteController){
-            car.GetComponent<CarManager>().FakeCar();
+            StartCoroutine(car.GetComponent<CarManager>().FakeCar());
         }
     }
 

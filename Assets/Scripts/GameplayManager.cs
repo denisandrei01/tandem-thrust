@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class GameplayManager : MonoBehaviour
 {
-    [SerializeField] public GameObject loadingScreen, playerScreen, spectatorScreen, calibrationScreen;
+    [SerializeField] public GameObject loadingScreen, playerScreen, spectatorScreen;
     [SerializeField] private GameObject carPrefab;
     [SerializeField] private CameraFollow cameraManager;
     [SerializeField] private Speedometer speedometer;
@@ -49,7 +49,6 @@ public class GameplayManager : MonoBehaviour
             InitSpectator(player);
         }
         else{
-            playerScreen.SetActive(true);
             cameraManager.Init(GameManagers.playerController.car, startingPosition[player.teamId].camera);
             minimapManager.Init(GameManagers.playerController.car.transform);
             UpdateLapNr(1);
@@ -67,26 +66,33 @@ public class GameplayManager : MonoBehaviour
 
     private void InitPilot(Player player)
     {
+        playerScreen.SetActive(true);
         speedometer.Init(GameManagers.playerController.car.GetComponent<CarManager>());
         GetInputFunction = this.GetPilotInput;
     }
 
     private void InitCopilot(Player player)
     {
-        powerupManager.powerupPanel.SetActive(true);
+        
     }
 
     public void Calibration()
     {
         if(GameManagers.isCopilot){
             loadingScreen.SetActive(false);
-            calibrationScreen.SetActive(true);
             bCIManager.gameObject.SetActive(true);
         }
         else{
-            calibrationScreen.SetActive(false);
             GameManagers.playerController.PlayerReadyAfterCalibrationServerRpc();
         }
+    }
+
+    public void FinishCalibration()
+    {
+        loadingScreen.SetActive(true);
+        playerScreen.SetActive(true);
+        powerupManager.powerupPanel.SetActive(true);
+        GameManagers.playerController.PlayerReadyAfterCalibrationServerRpc();
     }
 
     private void InitSpectator(Player player)

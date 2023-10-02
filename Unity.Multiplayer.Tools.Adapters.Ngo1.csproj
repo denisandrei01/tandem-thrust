@@ -50,7 +50,7 @@
     <UnityVersion>2022.3.9f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\adada\.vscode\extensions\visualstudiotoolsforunity.vstuc-0.9.1\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\andre\.vscode\extensions\visualstudiotoolsforunity.vstuc-0.9.1\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.9f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.9f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -327,23 +327,23 @@
     <Reference Include="Mono.Cecil">
       <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
     </Reference>
+    <Reference Include="ERPBCIManager">
+      <HintPath>Assets\Plugins\ERPBCIManager.dll</HintPath>
+    </Reference>
     <Reference Include="Gtec.Chain.Common">
       <HintPath>Assets\Plugins\Gtec.Chain.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Gtec.Chain.Windows.Devices.Unicorn">
+      <HintPath>Assets\Plugins\Gtec.Chain.Windows.Devices.Unicorn.dll</HintPath>
     </Reference>
     <Reference Include="ERPFlashController">
       <HintPath>Assets\Plugins\ERPFlashController.dll</HintPath>
     </Reference>
-    <Reference Include="UnicornDotNet">
-      <HintPath>Assets\Plugins\UnicornDotNet.dll</HintPath>
-    </Reference>
-    <Reference Include="ERPBCIManager">
-      <HintPath>Assets\Plugins\ERPBCIManager.dll</HintPath>
-    </Reference>
     <Reference Include="Gtec.Licensing.Unicorn.DotNet">
       <HintPath>Assets\Plugins\Gtec.Licensing.Unicorn.DotNet.dll</HintPath>
     </Reference>
-    <Reference Include="Gtec.Chain.Windows.Devices.Unicorn">
-      <HintPath>Assets\Plugins\Gtec.Chain.Windows.Devices.Unicorn.dll</HintPath>
+    <Reference Include="UnicornDotNet">
+      <HintPath>Assets\Plugins\UnicornDotNet.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.9f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\mscorlib.dll</HintPath>

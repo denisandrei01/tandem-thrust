@@ -82,6 +82,7 @@
     <Compile Include="Assets\ClassSelectionAvailableExample.cs" />
     <Compile Include="Assets\Scripts\Relu\StarIdle.cs" />
     <Compile Include="Assets\Scripts\CountDown.cs" />
+    <Compile Include="Assets\Scripts\BciSelectableObjects\MicHackForColor.cs" />
     <Compile Include="Assets\Scripts\MiniGames\InkPattern.cs" />
     <Compile Include="Assets\Scripts\LobbyManager.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />

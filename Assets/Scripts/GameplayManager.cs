@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Gtec.UnityInterface;
 using TMPro;
 using Unity.Netcode;
 using Unity.VisualScripting;
@@ -7,7 +8,7 @@ using UnityEngine;
 
 public class GameplayManager : MonoBehaviour
 {
-    [SerializeField] public GameObject loadingScreen, playerScreen, spectatorScreen;
+    [SerializeField] public GameObject loadingScreen, playerScreen, spectatorScreen, calibrationScreen;
     [SerializeField] private GameObject carPrefab;
     [SerializeField] private CameraFollow cameraManager;
     [SerializeField] private Speedometer speedometer;
@@ -20,6 +21,7 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] public LeaderboardManager leaderboardManager;
     [SerializeField] public PowerupManager powerupManager;
     [SerializeField] public CountDown countDown;
+    [SerializeField] private BCIManager2D bCIManager;
 
     private Action GetInputFunction;
 
@@ -72,6 +74,18 @@ public class GameplayManager : MonoBehaviour
     private void InitCopilot(Player player)
     {
         powerupManager.powerupPanel.SetActive(true);
+    }
+
+    public void Calibration()
+    {
+        if(GameManagers.isCopilot){
+            loadingScreen.SetActive(false);
+            calibrationScreen.SetActive(true);
+            bCIManager.gameObject.SetActive(true);
+        }
+        else{
+            GameManagers.playerController.PlayerReadyAfterCalibrationServerRpc();
+        }
     }
 
     private void InitSpectator(Player player)

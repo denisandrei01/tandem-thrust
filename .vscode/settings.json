@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Test_Race.sln"
+    "dotnet.defaultSolution": "tandem-thrust.sln"
 }

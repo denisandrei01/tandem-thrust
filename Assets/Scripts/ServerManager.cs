@@ -239,8 +239,10 @@ public class ServerManager : MonoBehaviour
     {
         List<ulong> allOtherPlayers = new();
 
+        Debug.Log("Nr of teams: " + teams.Count);
+
         foreach (var t in teams){
-            if(t.pilotId == team.pilotId){
+            if(t.pilotId == team.pilotId || !t.hasPilot){
                 continue;
             }
 
@@ -252,6 +254,7 @@ public class ServerManager : MonoBehaviour
 
         for(int i=0;i<players.Length; i++){
             players[i] = allOtherPlayers[i];
+            Debug.Log("To player id: " + players[i]);
         }
 
         return new ClientRpcParams{

@@ -17,7 +17,7 @@ public class CarManager : MonoBehaviour
     private GameObject realFrontLeftWheel, realFrontRightWheel;
 
     // Magic valur, seems to work
-    private readonly float lerpSpeed = 10f, wheelsLerpSpeed = 100f;
+    private readonly float lerpSpeed = 15f, wheelsLerpSpeed = 60f;
 
     private readonly float blimpYpos = 300f;
 

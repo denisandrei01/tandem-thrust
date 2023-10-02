@@ -49,6 +49,7 @@ public class WindshieldCleaner : IMinigame
         paterns[currentPattern].GetComponent<InkPattern>().inks[inkIndex].SetActive(false);
         if(++cleaned >= needsToClean){
             isActive = false;
+            paterns[currentPattern].SetActive(false);
             if(GameManagers.isCopilot){
                 GameManagers.gameplayManager.powerupManager.powerupPanel.SetActive(true);
             }

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teamName: North America
   color: {r: 0.20784314, g: 0.019607844, b: 0.627451, a: 1}
-  carTexture: {fileID: 2800000, guid: f5339e3a5ecdae64aa3afa490a1d892e, type: 3}
+  carTexture: {fileID: 2800000, guid: 8c508eea1762dd44cbf66593e03a6b04, type: 3}

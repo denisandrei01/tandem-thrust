@@ -39,6 +39,7 @@ public class ServerManager : MonoBehaviour
     public Dictionary<ulong, NetworkObject> cars = new();
 
     public int playersReady;
+    public int playersCalibrated;
 
     public float gameTime = 0;
     public bool trackTime = false;

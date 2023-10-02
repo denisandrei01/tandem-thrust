@@ -148,8 +148,16 @@ public class PlayerController : NetworkBehaviour
     public void PlayerReadyServerRpc()
     {
         if(++GameManagers.serverManager.playersReady == GameManagers.serverManager.players.Count){
-            // ToDo Start countdown
             StartGameClientRpc();
+        }
+        Debug.Log("Ready: " + GameManagers.serverManager.playersReady + "\\" + GameManagers.serverManager.players.Count);
+    }
+
+    [ServerRpc]
+    public void PlayerReadyAfterCalibrationServerRpc()
+    {
+        if(++GameManagers.serverManager.playersCalibrated == GameManagers.serverManager.players.Count){
+            StartCountdownClientRpc();
             GameManagers.serverManager.gameTime = 0;
             GameManagers.serverManager.trackTime = true;
             GameManagers.serverManager.teamsFinished = 0;
@@ -183,6 +191,12 @@ public class PlayerController : NetworkBehaviour
 
     [ClientRpc]
     private void StartGameClientRpc()
+    {
+        GameManagers.gameplayManager.Calibration();
+    }
+
+    [ClientRpc]
+    private void StartCountdownClientRpc()
     {
         GameManagers.gameplayManager.loadingScreen.SetActive(false);
         GameManagers.gameplayManager.countDown.StartCountDown();

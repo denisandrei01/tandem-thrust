@@ -513,6 +513,8 @@ MonoBehaviour:
   frontRightWheelCollider: {fileID: 8758683896004753855}
   rearLeftWheelCollider: {fileID: 9115278071625920791}
   rearRightWheelCollider: {fileID: 6044418649410162408}
+  frontLeftWheelTransform: {fileID: 0}
+  frontRightWheelTransform: {fileID: 0}
 --- !u!54 &1607401285673449976
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -597,10 +599,6 @@ MonoBehaviour:
   spoiler: {fileID: 6783595284898700842}
   blimp: {fileID: 0}
   blimpPrefab: {fileID: 977510837637085972, guid: cb1fa6b3368f6d34db10be44247bc7cd, type: 3}
-  frontLeftWheelCollider: {fileID: 2795083175656988011}
-  frontRightWheelCollider: {fileID: 8758683896004753855}
-  rearLeftWheelCollider: {fileID: 9115278071625920791}
-  rearRightWheelCollider: {fileID: 6044418649410162408}
   wheelsParent: {fileID: 7057540257230216097}
   frontLeftWheelPrefab: {fileID: 9210399938159372039, guid: 1fff5f29a30d65a9aaada5eb85d49f61, type: 3}
   frontRightWheelPrefab: {fileID: 1726338631541324206, guid: 7728def5521f53156a0b4c6c20bf9927, type: 3}
@@ -630,7 +628,7 @@ MonoBehaviour:
   PositionThreshold: 0.001
   RotAngleThreshold: 0.01
   ScaleThreshold: 0.01
-  UseQuaternionSynchronization: 0
+  UseQuaternionSynchronization: 1
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 0
   InLocalSpace: 0

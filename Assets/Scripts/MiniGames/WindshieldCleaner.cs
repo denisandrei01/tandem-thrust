@@ -34,6 +34,7 @@ public class WindshieldCleaner : IMinigame
 
     public void TryToCleanInk(int inkIndex)
     {
+        Debug.Log("is Active: " + isActive);
         if(!isActive){
             return;
         }

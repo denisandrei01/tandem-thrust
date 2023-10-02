@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.016090982, g: 0.01466979, b: 0.013826404, a: 1}
+  m_IndirectSpecularColor: {r: 0.016103873, g: 0.014637265, b: 0.013840056, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11687,6 +11687,8 @@ MonoBehaviour:
     camera: {x: -59.2, y: 3.26, z: -253.7}
   - car: {x: -62.2, y: 0.1, z: -248.45}
     camera: {x: -54.2, y: 3.26, z: -248.40999}
+  - car: {x: -54.2, y: 0.1, z: -248.45}
+    camera: {x: -46.2, y: 3.26, z: -248.40999}
   gameRuning: 0
 --- !u!4 &825544705
 Transform:
@@ -20681,7 +20683,7 @@ Transform:
   m_GameObject: {fileID: 1581557720}
   serializedVersion: 2
   m_LocalRotation: {x: 0.053393498, y: -0.7050881, z: 0.053393506, w: 0.7050881}
-  m_LocalPosition: {x: -54.2, y: 3.26, z: -248.40999}
+  m_LocalPosition: {x: -46.2, y: 3.26, z: -248.40999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

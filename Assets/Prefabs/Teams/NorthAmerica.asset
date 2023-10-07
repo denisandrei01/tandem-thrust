@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda2b39b74afda7c68983ad5f7c65a97, type: 3}
+  m_Name: NorthAmerica
+  m_EditorClassIdentifier: 
+  teamName: North America
+  color: {r: 0.20784314, g: 0.019607844, b: 0.627451, a: 1}
+  carTexture: {fileID: 2800000, guid: 8c508eea1762dd44cbf66593e03a6b04, type: 3}

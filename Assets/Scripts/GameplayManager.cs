@@ -89,8 +89,8 @@ public class GameplayManager : MonoBehaviour
 
     public void SkipCalibration()
     {
-        GameManagers.playerController.PlayerReadyAfterCalibrationServerRpc();
         bCIManager.gameObject.SetActive(false);
+        FinishCalibration();
     }
 
     public void FinishCalibration()
@@ -125,7 +125,7 @@ public class GameplayManager : MonoBehaviour
     {
         var car = Instantiate(carPrefab, startingPosition[teamId].car, Quaternion.Euler(0, -90f, 0f));
         car.GetComponent<NetworkObject>().Spawn();
-        car.GetComponent<CarManager>().SpawnWheels(car.GetComponent<Controller>());
+        car.GetComponent<CarManager>().SpawnWheels(car.transform);
         return car;
     }
 
@@ -133,7 +133,8 @@ public class GameplayManager : MonoBehaviour
     {
         car.GetComponent<CarManager>().Init(GameManagers.GetTeam(teamId));
         if(deleteController){
-            StartCoroutine(car.GetComponent<CarManager>().FakeCar());
+            // StartCoroutine(car.GetComponent<CarManager>().FakeCar());
+            car.GetComponent<CarManager>().FakeCar();
         }
     }
 

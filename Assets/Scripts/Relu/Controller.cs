@@ -75,8 +75,6 @@ public class Controller : MonoBehaviour
     [SerializeField] private WheelCollider rearLeftWheelCollider;
     [SerializeField] private WheelCollider rearRightWheelCollider;
 
-    public Transform frontLeftWheelTransform, frontRightWheelTransform;
-
     public float GetBrake()
     {
         return brakeForce;
@@ -299,10 +297,10 @@ public class Controller : MonoBehaviour
     private void UpdateWheels()
     {
         // Dam update vizual la roti, sa vedem cum se misca pentru fiecare roata in parte
-        UpdateSingleWheel(frontLeftWheelCollider, frontLeftWheelTransform);
-        UpdateSingleWheel(frontRightWheelCollider, frontRightWheelTransform);
-        // UpdateSingleWheel(rearLeftWheelCollider, rearLeftWheelTransform);
-        // UpdateSingleWheel(rearRightWheelCollider, rearRightWheelTransform);
+        // UpdateSingleWheel(frontLeftWheelCollider, carManager.frontLeftWheelTransform);
+        // UpdateSingleWheel(frontRightWheelCollider, carManager.frontRightWheelTransform);
+        // UpdateSingleWheel(rearLeftWheelCollider, carManager.rearLeftWheelTransform);
+        // UpdateSingleWheel(rearRightWheelCollider, carManager.rearRightWheelTransform);
     }
 
     private void UpdateSingleWheel(WheelCollider wheelCollider, Transform wheelTransform)

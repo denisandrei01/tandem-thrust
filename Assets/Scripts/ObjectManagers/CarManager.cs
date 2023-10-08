@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using Unity.Netcode.Components;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CarManager : MonoBehaviour
@@ -11,13 +12,13 @@ public class CarManager : MonoBehaviour
 
     [SerializeField] private Transform wheelsParent;
 
-    [SerializeField] private GameObject frontLeftWheelPrefab, frontRightWheelPrefab;
+    [SerializeField] private GameObject frontLeftWheelPrefab, frontRightWheelPrefab, rearLeftWheelPrefab, rearRightWheelPrefab;
 
-    private GameObject fakeCar, fakeFrontLeftWheel, fakeFrontRightWheel;
-    private GameObject realFrontLeftWheel, realFrontRightWheel;
+    private GameObject fakeCar, fakeFrontLeftWheel, fakeFrontRightWheel, fakeRearLeftWheel, fakeRearRightWheel;
+    private GameObject realFrontLeftWheel, realFrontRightWheel, realRearLeftWheel, realRearRightWheel;
 
     // Magic valur, seems to work
-    private readonly float lerpSpeed = 15f, wheelsLerpSpeed = 60f;
+    private readonly float carLerpSpeed = 15f, wheelsLerpSpeed = 60f;
 
     private readonly float blimpYpos = 300f;
 
@@ -33,7 +34,7 @@ public class CarManager : MonoBehaviour
         blimp.GetComponent<MeshRenderer>().material.color = team.color;
     }
 
-    public IEnumerator FakeCar()
+    public void FakeCar()
     {
         Destroy(this.GetComponent<Controller>());
         Destroy(this.GetComponentInChildren<WheelsScript>());
@@ -47,35 +48,50 @@ public class CarManager : MonoBehaviour
         Destroy(fakeCar.GetComponent<CarManager>());
         Destroy(fakeCar.GetComponent<Controller>());
     
-        realFrontLeftWheel = GameObject.Find("FrontLeftWheel(Clone)");
-        realFrontRightWheel = GameObject.Find("FrontRightWheel(Clone)");
+        FindRealWheels();
 
-        while(realFrontLeftWheel == null || realFrontRightWheel == null){
-            //Wait for the wheels to spawn
-            yield return new WaitForSeconds(0.1f);
-            realFrontLeftWheel = GameObject.Find("FrontLeftWheel(Clone)");
-            realFrontRightWheel = GameObject.Find("FrontRightWheel(Clone)");
-        }
+        // while(realFrontLeftWheel == null || realFrontRightWheel == null || realRearLeftWheel == null || realRearRightWheel == null){
+        //     //Wait for the wheels to spawn
+        //     yield return new WaitForSeconds(0.1f);
+        //     FindRealWheels();
+        // }
 
-        fakeFrontLeftWheel = Instantiate(realFrontLeftWheel,
-             realFrontLeftWheel.transform.position, realFrontLeftWheel.transform.rotation);
-        realFrontLeftWheel.GetComponent<MeshRenderer>().enabled = false;
-
-        fakeFrontRightWheel = Instantiate(realFrontRightWheel,
-             realFrontRightWheel.transform.position, realFrontRightWheel.transform.rotation);
-        realFrontRightWheel.GetComponent<MeshRenderer>().enabled = false;
+        SpawnFakeWheel(ref fakeFrontLeftWheel, realFrontLeftWheel);
+        SpawnFakeWheel(ref fakeFrontRightWheel, realFrontRightWheel);
+        SpawnFakeWheel(ref fakeRearLeftWheel, realRearLeftWheel);
+        SpawnFakeWheel(ref fakeRearRightWheel, realRearRightWheel);
     }
 
-    public void SpawnWheels(Controller car)
+    private void FindRealWheels()
     {
-        Debug.Log("SpawnCar");
-        var frontLeftWheel = Instantiate(frontLeftWheelPrefab, wheelsParent);
-        frontLeftWheel.GetComponent<NetworkObject>().Spawn();
-        car.frontLeftWheelTransform = frontLeftWheel.transform;
+        // Can be improved
+        realFrontLeftWheel = GameObject.Find("FrontLeftWheel(Clone)");
+        realFrontRightWheel = GameObject.Find("FrontRightWheel(Clone)");
+        realRearLeftWheel = GameObject.Find("RearLeftWheel(Clone)");
+        realRearRightWheel = GameObject.Find("RearRightWheel(Clone)");
+    }
 
-        var frontRightWheel = Instantiate(frontRightWheelPrefab, wheelsParent);
-        frontRightWheel.GetComponent<NetworkObject>().Spawn();
-        car.frontRightWheelTransform = frontRightWheel.transform;
+    private void SpawnFakeWheel(ref GameObject fakeWheel, GameObject realWheel)
+    {
+        fakeWheel = fakeCar.transform.Find(realWheel.name).gameObject;
+        Destroy(fakeWheel.GetComponent<NetworkObject>());
+        Destroy(fakeWheel.GetComponent<NetworkTransform>());
+        realWheel.GetComponent<MeshRenderer>().enabled = false;
+    }
+
+    private GameObject SpawnWheel(GameObject wheelPrefab, Transform wheelParent)
+    {
+        var wheel = Instantiate(wheelPrefab, wheelsParent);
+        wheel.GetComponent<NetworkObject>().Spawn();
+        _ = wheel.GetComponent<NetworkObject>().TrySetParent(wheelParent);
+        return wheel;
+    }
+    public void SpawnWheels(Transform car)
+    {
+        realFrontLeftWheel = SpawnWheel(frontLeftWheelPrefab, car);
+        realFrontRightWheel = SpawnWheel(frontRightWheelPrefab, car);
+        realRearLeftWheel = SpawnWheel(rearLeftWheelPrefab, car);
+        realRearRightWheel = SpawnWheel(rearRightWheelPrefab, car);
     }
 
     void LateUpdate()
@@ -88,23 +104,46 @@ public class CarManager : MonoBehaviour
         }
     }
 
+    private void SetFakeWheelPositionAndRotation(Transform fakeWheelTransform, Transform realWheelTransform)
+    {
+        fakeWheelTransform.SetPositionAndRotation(
+            new Vector3(fakeWheelTransform.position.x, realWheelTransform.position.y, fakeWheelTransform.position.z),
+            Quaternion.Lerp(fakeWheelTransform.rotation, realWheelTransform.rotation, wheelsLerpSpeed*Time.deltaTime)
+        );
+    }
+
     void FixedUpdate()
     {
         if(fakeCar != null && fakeFrontLeftWheel != null && fakeFrontRightWheel != null){
             fakeCar.transform.SetPositionAndRotation(
-                Vector3.Lerp(fakeCar.transform.position, transform.position, lerpSpeed*Time.deltaTime),
+                Vector3.Lerp(fakeCar.transform.position, transform.position, carLerpSpeed*Time.deltaTime),
                 transform.rotation
             );
 
-            fakeFrontLeftWheel.transform.SetPositionAndRotation(
-                Vector3.Lerp(fakeFrontLeftWheel.transform.position, realFrontLeftWheel.transform.position, wheelsLerpSpeed*Time.deltaTime),
-                Quaternion.Lerp(fakeFrontLeftWheel.transform.rotation, realFrontLeftWheel.transform.rotation, wheelsLerpSpeed*Time.deltaTime)
-            );
-
-            fakeFrontRightWheel.transform.SetPositionAndRotation(
-                Vector3.Lerp(fakeFrontRightWheel.transform.position, realFrontRightWheel.transform.position, wheelsLerpSpeed*Time.deltaTime),
-                Quaternion.Lerp(fakeFrontRightWheel.transform.rotation, realFrontRightWheel.transform.rotation, wheelsLerpSpeed*Time.deltaTime)
-            );
+            SetFakeWheelPositionAndRotation(fakeFrontLeftWheel.transform, frontLeftWheelTransform);
+            SetFakeWheelPositionAndRotation(fakeFrontRightWheel.transform, frontRightWheelTransform);
+            SetFakeWheelPositionAndRotation(fakeRearLeftWheel.transform, rearLeftWheelTransform);
+            SetFakeWheelPositionAndRotation(fakeRearRightWheel.transform, rearRightWheelTransform);
         }
+    }
+
+    public Transform frontLeftWheelTransform
+    {
+        get => realFrontLeftWheel.transform;
+    }
+
+    public Transform frontRightWheelTransform
+    {
+        get => realFrontRightWheel.transform;
+    }
+
+    public Transform rearLeftWheelTransform
+    {
+        get => realRearLeftWheel.transform;
+    }
+
+    public Transform rearRightWheelTransform
+    {
+        get => realRearRightWheel.transform;
     }
 }

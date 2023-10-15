@@ -4,4 +4,4 @@
 
 ![image](https://github.com/denisandrei01/tandem-thrust/assets/110995715/fe01a8c5-d4cd-465e-b608-30bb9779df68)
 
-**Presentation Video:** TBD
+**Presentation Video:** https://youtu.be/t6f-mxCMRqY?si=aiYBLlm6ZOVsIPQ
